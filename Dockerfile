@@ -23,7 +23,7 @@ WORKDIR /work/tmp
 
 # compile libfastcommon
 RUN wget https://github.com/happyfish100/libfastcommon/archive/refs/tags/V1.0.66.tar.gz && \
-    tar zxvf libfastcommon-1.0.66.tar.gz && \
+    tar zxvf V1.0.66.tar.gz && \
     cd libfastcommon-1.0.66 && \
     ./make.sh && ./make.sh install
 
