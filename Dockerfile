@@ -10,7 +10,7 @@ ENV FASTDFS_PATH=/opt/fdfs \
     
 #install all the dependences
 RUN apt update -y && \
-    apt install -y net-tools wget gcc g++ make libpcre3 libpcre3-dev zlib1g-de
+    apt install -y net-tools wget gcc g++ make libpcre3 libpcre3-dev zlib1g-dev
  
 #create the dirs to store the files downloaded from internet
 RUN mkdir -p ${FASTDFS_PATH} \
