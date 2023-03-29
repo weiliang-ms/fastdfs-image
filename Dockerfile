@@ -9,7 +9,8 @@ ENV FASTDFS_PATH=/opt/fdfs \
     TRACKER_SERVER=
     
 #install all the dependences
-RUN apt install -y net-tools wget gcc g++
+RUN apt update -y && \
+    apt install -y net-tools wget gcc g++
  
 #create the dirs to store the files downloaded from internet
 RUN mkdir -p ${FASTDFS_PATH} \
