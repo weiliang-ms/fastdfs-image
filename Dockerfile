@@ -29,19 +29,19 @@ RUN wget https://github.com/happyfish100/libfastcommon/archive/refs/tags/V1.0.66
 
 # compile libserverframe
 RUN wget https://github.com/happyfish100/libserverframe/archive/refs/tags/V1.1.25.tar.gz && \
-    tar zxvf libserverframe-1.1.25.tar.gz && \
+    tar zxvf V1.1.25.tar.gz && \
     cd libserverframe-1.1.25 && \
     ./make.sh && ./make.sh install
    
 # compile fastdfs
 RUN wget https://github.com/happyfish100/fastdfs/archive/refs/tags/V6.9.4.tar.gz && \
-    tar zxvf fastdfs-6.9.4.tar.gz && \
+    tar zxvf V6.9.4.tar.gz && \
     cd fastdfs-6.9.4 && \
     ./make.sh && ./make.sh install
     
 RUN wget http://nginx.org/download/nginx-1.22.1.tar.gz \
-    && wget https://codeload.github.com/happyfish100/fastdfs-nginx-module/tar.gz/refs/tags/V1.23 \
-    && tar zxvf fastdfs-nginx-module-1.23.tar.gz \
+    && wget https://github.com/happyfish100/fastdfs-nginx-module/archive/refs/tags/V1.23.tar.gz \
+    && tar zxvf V1.23.tar.gz \
     && tar zxvf nginx-1.22.1.tar.gz \
     && cd nginx-1.22.1 \
     && ./configure --prefix=/usr/local/nginx --add-module=../fastdfs-nginx-module-1.23/src/ \
