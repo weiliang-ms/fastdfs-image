@@ -10,7 +10,7 @@ elif [ "$1" = "storage" ] ; then
   FASTDFS_MODE="storage"
   sed -i "s|store_path0.*$|store_path0=/opt/fdfs/files|g" /etc/fdfs/mod_fastdfs.conf
   sed -i "s|url_have_group_name =.*$|url_have_group_name = true|g" /etc/fdfs/mod_fastdfs.conf
-  /usr/local/nginx_fdfs/sbin/nginx -c /usr/local/nginx_fdfs/conf/nginx.conf
+  /usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf
 else
   FASTDFS_MODE="tracker"
 fi
