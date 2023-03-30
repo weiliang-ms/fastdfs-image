@@ -60,7 +60,7 @@ sed -i 's#store_path0 = /home/yuqing/fastdfs#store_path0=/opt/fdfs#g' /etc/fdfs/
 sed -i "s#thread_stack_size=512KB#thread_stack_size=1024KB#g" /etc/fdfs/storage.conf
 
 RUN rm -rf /work/tmp
-
+COPY conf/ /etc/fdfs/
 # 默认nginx端口
 ENV IP="localhost"
 # 默认fastdfs端口
