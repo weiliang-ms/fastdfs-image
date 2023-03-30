@@ -51,12 +51,12 @@ RUN wget http://nginx.org/download/nginx-1.22.1.tar.gz \
     
 COPY nginx.conf /usr/local/nginx/conf/nginx.conf
 
-RUN sed -i 's#base_path = /home/yuqing/fastdfs#base_path=/opt/fdfs/client#g' /etc/fdfs/client.conf && \
+RUN sed -i 's#base_path = /home/yuqing/fastdfs#base_path=/opt/fdfs#g' /etc/fdfs/client.conf && \
 sed -i "s#tracker_server=192.168.0.197:22122#tracker_server=0.0.0.0:22122#g" /etc/fdfs/client.conf && \
-sed -i 's#base_path = /home/yuqing/fastdfs#base_path=/opt/fdfs/tracker#g' /etc/fdfs/tracker.conf && \
+sed -i 's#base_path = /home/yuqing/fastdfs#base_path=/opt/fdfs#g' /etc/fdfs/tracker.conf && \
 set -i "s#thread_stack_size = 64KB#thread_stack_size = 128KB#g" /etc/fdfs/tracker.conf && \
-sed -i 's#base_path = /home/yuqing/fastdfs#base_path=/opt/fdfs/storage#g' /etc/fdfs/storage.conf  && \
-sed -i 's#store_path0 = /home/yuqing/fastdfs#store_path0=/opt/fdfs/storage#g' /etc/fdfs/storage.conf && \
+sed -i 's#base_path = /home/yuqing/fastdfs#base_path=/opt/fdfs#g' /etc/fdfs/storage.conf  && \
+sed -i 's#store_path0 = /home/yuqing/fastdfs#store_path0=/opt/fdfs#g' /etc/fdfs/storage.conf && \
 sed -i "s#thread_stack_size=512KB#thread_stack_size=1024KB#g" /etc/fdfs/storage.conf
 
 RUN rm -rf /work/tmp
